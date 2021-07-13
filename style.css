@@ -496,11 +496,6 @@ hr {
   margin-bottom: 1.5em;
 }
 
-ul,
-ol {
-  /**margin: 0 0 1rem 1rem;**/
-}
-
 ul {
   list-style: disc;
 }
