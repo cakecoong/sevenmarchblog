@@ -69,8 +69,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --color-primary: rgb(0, 0, 0);
   --color-secondary: rgb(250, 250, 250);
   --color-accent: rgb(219, 219, 219);
-  --color-control: rgb(0, 149, 246);
-  --color-control-hover: #388fc7;
+  --color-control: #89998e;
+  --color-control-hover: #3e4440;
 }
 
 /**
@@ -486,7 +486,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-  background: #fff;
+  background-color: var(--color-secondary);
 }
 
 hr {
@@ -537,6 +537,13 @@ figure {
 table {
   margin: 0 0 1.5em;
   width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+table td {
+  border: 1px solid var(--color-accent);
+  padding: 5px;
 }
 
 /* Links
@@ -651,6 +658,61 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+/* Flex
+--------------------------------------------- */
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-basis: 100%;
+  vertical-align: top;
+}
+.site-header,
+.widget-area {
+  width: 100%;
+}
+.site-header {
+  height: 54px;
+  background-color: #fff;
+}
+.site-header {
+  border-bottom: 1px solid var(--color-accent);
+  display: grid;
+  grid-template-rows: 54px;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+}
+
+.site-branding {
+  justify-self: start;
+  padding-left: 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .site-main {
+    flex-basis: 640px;
+    margin-right: 28px;
+  }
+  .page-template-page-nosidebar .site-main {
+    flex-basis: 940px;
+    margin: 0;
+  }
+  .widget-area {
+    flex-basis: 300px;
+  }
+  .site-branding {
+    flex-basis: 140px;
+    padding: 0px;
+  }
+  .site-header {
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 /*--------------------------------------------------------------
 # Components
@@ -670,11 +732,51 @@ textarea {
   color: #fff;
 }
 
+/* Card
+--------------------------------------------- */
+.card {
+  background-color: #fff;
+  border-radius: 3px;
+}
+.card__header {
+  margin-bottom: 1px solid var(--color-accent);
+}
+
+.card__footer {
+  margin-top: 1px solid var(--color-accent);
+}
+.card__body {
+  padding: 1rem;
+}
+.card .entry-header,
+.card .entry-footer,
+.card--body {
+  padding: 1rem;
+}
+
+.card .entry-content {
+  padding: 0 1rem;
+}
+
+a.more-link {
+  background: var(--color-control);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color: #ffffff;
+}
+a.more-link::after {
+  content: "...";
+}
+a.more-link:hover {
+  text-decoration: none;
+  background-color: var(--color-control-hover);
+}
+
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
   display: block;
-  width: 100%;
+  width: 100vw;
 }
 
 .main-navigation ul {
@@ -715,11 +817,20 @@ textarea {
 
 .main-navigation li {
   position: relative;
+  padding: 1em 1.5em;
+  background-color: var(--color-control);
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.main-navigation li:hover {
+  background-color: var(--color-control-hover);
 }
 
 .main-navigation a {
   display: block;
   text-decoration: none;
+  font-weight: bold;
+  color: #fff;
 }
 
 /* Small menu. */
@@ -727,15 +838,10 @@ textarea {
 .main-navigation.toggled ul {
   display: block;
 }
-
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none;
-  }
-
-  .main-navigation ul {
-    display: flex;
-  }
+.menu-toggle {
+  width: 45px;
+  justify-self: flex-end;
+  margin-right: 1.5em;
 }
 
 .site-main .comment-navigation,
@@ -789,8 +895,28 @@ textarea {
   margin: 0 0 1.5em;
 }
 
+/* post-navigation
+----------------------------------------------*/
+.post-navigation {
+  background-color: #fff;
+  padding: 1rem;
+}
+
 /* Comments
 --------------------------------------------- */
+#comments ol,
+#comments li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+#comments .comment-body {
+  padding: 10px;
+  border: 1px solid var(--color-accent);
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
 .comment-content a {
   word-wrap: break-word;
 }
@@ -802,7 +928,7 @@ textarea {
 /* Widgets
 --------------------------------------------- */
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0 1em 1.5em;
 }
 
 .widget select {
@@ -895,6 +1021,34 @@ textarea {
 .gallery-caption {
   display: block;
 }
+/* Page Header
+----------------------------------------------*/
+.page-header {
+  margin-bottom: 10px;
+}
+/* Sticky Header
+---------------------------------------------*/
+.sticky-header {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 99;
+}
+
+/* Footer
+
+----------------------------------------------*/
+.site-footer {
+  height: 54px;
+  background-color: #fff;
+  border-top: 1px solid var(--color-accent);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5em;
+}
 
 /*--------------------------------------------------------------
 # Plugins
@@ -986,4 +1140,42 @@ textarea {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5em;
+}
+
+/******************************
+****** DeskTop ****************/
+@media screen and (min-width: 37.5em) {
+  /* Nav Menu
+  ************************/
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation {
+    flex-basis: 800px;
+  }
+
+  .main-navigation ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .main-navigation li {
+    background-color: #fff;
+    border-bottom: 0px;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+  }
+  .main-navigation li:hover a {
+    color: #fff;
+  }
+  .main-navigation a {
+    color: var(--color-control);
+  }
+
+  /* Sticky Header 
+  ***********************************/
+  .sticky-header-login {
+    top: 32px;
+  }
 }
