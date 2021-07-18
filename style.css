@@ -720,13 +720,16 @@ textarea {
 
 /* Badge
 --------------------------------------------- */
-.badge a {
+.badge a,
+.tag-cloud-link {
   padding: 3px 5px;
   background-color: var(--color-accent);
   border-radius: 5px;
 }
 .badge a:hover,
-.badge a:active {
+.tag-cloud-link:hover,
+.badge a:active,
+.tag-cloud-link:active {
   text-decoration: none;
   background-color: var(--color-control);
   color: #fff;
@@ -759,10 +762,12 @@ textarea {
 }
 
 a.more-link {
-  background: var(--color-control);
   padding: 0.5em 1em;
   border-radius: 5px;
-  color: #ffffff;
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: underline;
 }
 a.more-link::after {
   content: "...";

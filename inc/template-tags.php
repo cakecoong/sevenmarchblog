@@ -67,10 +67,10 @@ if ( ! function_exists( 'sevenmarch_entry_footer' ) ) :
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'sevenmarch' ) );
+			$tags_list = get_the_tag_list( ' #', esc_html_x( ' #', 'list item separator', 'sevenmarch' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<div><i class="fas fa-tags"></i> </span> <span class="tags-links badge">%1$s</span></div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<div><i class="fas fa-tags"></i> </span> <span class="tags-links">%1$s</span></div>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
