@@ -917,6 +917,15 @@ a.more-link:hover {
 
 /* Comments
 --------------------------------------------- */
+#comments {
+  margin: 0 1em;
+  padding: 0px;
+  border: 1px solid var(--color-accent);
+}
+.comments-title {
+  padding: 1em;
+}
+
 #comments ol,
 #comments li {
   margin: 0px;
@@ -926,9 +935,8 @@ a.more-link:hover {
 
 #comments .comment-body {
   padding: 10px;
-  border: 1px solid var(--color-accent);
+  border-top: 1px solid var(--color-accent);
   margin-bottom: 10px;
-  border-radius: 5px;
 }
 .comment-content a {
   word-wrap: break-word;
@@ -936,6 +944,11 @@ a.more-link:hover {
 
 .bypostauthor {
   display: block;
+}
+
+.comment-respond {
+  padding: 1em;
+  border-top: 1px solid var(--color-accent);
 }
 
 /* Widgets
@@ -1207,5 +1220,10 @@ a.more-link:hover {
   *******************************/
   .widget {
     margin: 0 1em 1em 1em;
+  }
+  /* Comment
+  ******************************/
+  #comments {
+    margin: 0;
   }
 }
