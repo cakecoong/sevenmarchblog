@@ -693,6 +693,9 @@ textarea {
   .site-main {
     flex-basis: 640px;
   }
+  .page-template-page-fullpage .site-main {
+    flex-basis: 100%;
+  }
   .page-template-page-nosidebar .site-main {
     flex-basis: 940px;
     margin: 0;
@@ -1089,6 +1092,14 @@ a.more-link:hover {
   margin-top: 1.5em;
 }
 
+/*Full Package 
+***********************************************/
+.page-template-page-fullpage .entry-content,
+.page-template-page-fullpage .site-footer,
+.page-template-page-fullpage .page {
+  margin: 0;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -1236,5 +1247,10 @@ a.more-link:hover {
   ***************************/
   .site-main .post-navigation {
     margin: 0 0 1em 0;
+  }
+  /* Full Package
+  **************************/
+  .page-template-page-fullpage .site-header {
+    margin: 0;
   }
 }
