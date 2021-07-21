@@ -692,7 +692,6 @@ textarea {
 @media screen and (min-width: 768px) {
   .site-main {
     flex-basis: 640px;
-    margin-right: 28px;
   }
   .page-template-page-nosidebar .site-main {
     flex-basis: 940px;
@@ -933,11 +932,19 @@ a.more-link:hover {
 /* Widgets
 --------------------------------------------- */
 .widget {
-  margin: 0 1em 1.5em;
+  margin: 0 1em 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid var(--color-accent);
 }
 
 .widget select {
   max-width: 100%;
+}
+
+.widget-title {
+  border-bottom: 1px solid var(--color-accent);
+  padding: 0 10px 10px 10px;
 }
 
 /* Media
@@ -1182,5 +1189,10 @@ a.more-link:hover {
   ***********************************/
   .sticky-header-login {
     top: 32px;
+  }
+  /* Card 
+  ************************************/
+  .card {
+    border: 1px solid var(--color-accent);
   }
 }
