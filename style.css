@@ -899,6 +899,15 @@ a.more-link:hover {
   margin: 0 0 1.5em;
 }
 
+.entry-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.comments-link {
+  justify-self: end;
+}
+
 /* post-navigation
 ----------------------------------------------*/
 .post-navigation {
@@ -932,7 +941,7 @@ a.more-link:hover {
 /* Widgets
 --------------------------------------------- */
 .widget {
-  margin: 0 1em 1em;
+  margin: 1em;
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid var(--color-accent);
@@ -1049,7 +1058,6 @@ a.more-link:hover {
 }
 
 /* Footer
-
 ----------------------------------------------*/
 .site-footer {
   height: 54px;
@@ -1194,5 +1202,10 @@ a.more-link:hover {
   ************************************/
   .card {
     border: 1px solid var(--color-accent);
+  }
+  /* Widget
+  *******************************/
+  .widget {
+    margin: 0 1em 1em 1em;
   }
 }

@@ -60,11 +60,11 @@ if ( ! function_exists( 'sevenmarch_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'sevenmarch' ) );
+			/*$categories_list = get_the_category_list( esc_html__( ', ', 'sevenmarch' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<div><i class="fas fa-folder"></i> <span class="cat-links">%1$s</span></div>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
+				//printf( '<div><i class="fas fa-folder"></i> <span class="cat-links">%1$s</span></div>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			//}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( ' #', esc_html_x( ' #', 'list item separator', 'sevenmarch' ) );
