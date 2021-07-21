@@ -971,6 +971,9 @@ a.more-link:hover {
   border-bottom: 1px solid var(--color-accent);
   padding: 0 10px 10px 10px;
 }
+.widget div {
+  padding: 0 1em 1em;
+}
 
 /* Media
 --------------------------------------------- */
