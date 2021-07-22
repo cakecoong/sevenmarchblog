@@ -689,33 +689,6 @@ textarea {
   padding-left: 1.5em;
 }
 
-@media screen and (min-width: 768px) {
-  .site-main {
-    flex-basis: 640px;
-  }
-  .page-template-page-fullpage .site-main {
-    flex-basis: 100%;
-  }
-  .page-template-page-nosidebar .site-main {
-    flex-basis: 940px;
-    margin: 0;
-  }
-  .widget-area {
-    flex-basis: 300px;
-  }
-  .site-branding {
-    flex-basis: 140px;
-    padding: 0px;
-  }
-  .site-header {
-    margin-bottom: 1.5em;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -1092,6 +1065,32 @@ a.more-link:hover {
   margin-top: 1.5em;
 }
 
+/**Sidebar popup
+  ****************/
+.sidebar-popup {
+  position: fixed;
+  background-color: var(--color-control);
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.sidebar-popup .close {
+  content: "X";
+  height: 32px;
+  border: 1px solid var(--color-accent);
+  display: block;
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  text-align: center;
+  font-weight: 900;
+  color: white;
+}
+
 /*Full Package 
 ***********************************************/
 .page-template-page-fullpage .entry-content,
@@ -1195,6 +1194,30 @@ a.more-link:hover {
 /******************************
 ****** DeskTop ****************/
 @media screen and (min-width: 37.5em) {
+  .site-main {
+    flex-basis: 640px;
+  }
+  .page-template-page-fullpage .site-main {
+    flex-basis: 100%;
+  }
+  .page-template-page-nosidebar .site-main {
+    flex-basis: 940px;
+    margin: 0;
+  }
+  .widget-area {
+    flex-basis: 300px;
+  }
+  .site-branding {
+    flex-basis: 140px;
+    padding: 0px;
+  }
+  .site-header {
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   /* Nav Menu
   ************************/
   .menu-toggle {
