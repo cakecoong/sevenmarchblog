@@ -1077,6 +1077,8 @@ a.more-link:hover {
   right: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  padding-top: 32px;
+  display: none;
 }
 .sidebar-popup .close {
   content: "X";

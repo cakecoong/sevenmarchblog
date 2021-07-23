@@ -45,7 +45,10 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
-			<nav id="site-navigation" class="main-navigation">
+			
+		<?php if(!wp_is_mobile()) : ?>
+	
+		<nav id="site-navigation" class="main-navigation">
 					<?php
 					wp_nav_menu(
 						array(
@@ -55,5 +58,6 @@
 					);
 			?>
 	</nav><!-- #site-navigation -->
+	<?php endif ?>
 	</header><!-- #masthead -->
 
